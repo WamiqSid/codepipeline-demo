@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to the Unique Page</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1a1a1a;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #ff6347;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #ff6347, 0 0 20px #ff6347, 0 0 30px #ff6347;
+            }
+            to {
+                text-shadow: 0 0 20px #ff6347, 0 0 30px #ff6347, 0 0 40px #ff6347;
+            }
+        }
+
+        .button-container {
+            position: absolute;
+            bottom: 50px;
+        }
+
+        .button-container button {
+            background-color: #ff6347;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button-container button:hover {
+            background-color: #ff4500;
+        }
+
+        .ball {
+            position: absolute;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: #ff6347;
+            top: -100px;
+            left: -100px;
+            animation: moveBall 10s infinite linear;
+        }
+
+        @keyframes moveBall {
+            0% {
+                top: -100px;
+                left: -100px;
+            }
+            25% {
+                top: -100px;
+                left: calc(100vw - 50px);
+            }
+            50% {
+                top: calc(100vh - 50px);
+                left: calc(100vw - 50px);
+            }
+            75% {
+                top: calc(100vh - 50px);
+                left: -100px;
+            }
+            100% {
+                top: -100px;
+                left: -100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+    <h1>Welcome to a Unique Experience</h1>
+    <div class="button-container">
+        <button id="button">Click Me</button>
+    </div>
+
+    <script>
+        const button = document.getElementById('button');
+        button.addEventListener('click', () => {
+            alert('Thank you for clicking!');
+        });
+    </script>
+</body>
+</html>
